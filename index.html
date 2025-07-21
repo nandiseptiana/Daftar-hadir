@@ -1,0 +1,104 @@
+DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <p></p>
+  <!-- Project -->
+  <script src="main.js"></script>
+  <h1>jquery dan artificial intelligence</h1>
+  
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  
+  <h1>jquery dan <i>artificial intelligance</i></h1>
+  
+  <!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Daftar Hadir Siswa</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    table {
+      width: 50%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #000;
+      padding: 10px;
+      text-align: left;
+    }
+
+    tr:hover {
+      cursor: pointer;
+      background-color: #f0f0f0;
+    }
+
+    td.checkbox {
+      text-align: center;
+      width: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Daftar Hadir Kegiatan Siswa</h2>
+
+  <table id="daftarHadir">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Nama Siswa</th>
+        <th>Hadir</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Ahmad</td>
+        <td class="checkbox">☐</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Budi</td>
+        <td class="checkbox">☐</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Citra</td>
+        <td class="checkbox">☐</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Dewi</td>
+        <td class="checkbox">☐</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    $(document).ready(function() {
+      $('#daftarHadir tbody tr').click(function() {
+        let checkbox = $(this).find('.checkbox');
+        checkbox.text(checkbox.text() === '☐' ? '☑' : '☐');
+      });
+    });
+  </script>
+</body>
+</html>
+
+</body>

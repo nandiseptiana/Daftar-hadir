@@ -1,31 +1,4 @@
-DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>HTML</title>
-  
-  <!-- HTML -->
-  
-
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-  <p></p>
-  <!-- Project -->
-  <script src="main.js"></script>
-  <h1>jquery dan artificial intelligence</h1>
-  
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-  
-  <h1>jquery dan <i>artificial intelligance</i></h1>
-  
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -33,72 +6,86 @@ DOCTYPE html>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <style>
     table {
-      width: 50%;
       border-collapse: collapse;
-      margin-top: 20px;
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
     }
-
     th, td {
       border: 1px solid #000;
-      padding: 10px;
+      padding: 8px 12px;
       text-align: left;
-    }
-
-    tr:hover {
       cursor: pointer;
-      background-color: #f0f0f0;
     }
-
-    td.checkbox {
+    #totalHadir {
       text-align: center;
-      width: 50px;
+      margin-top: 20px;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <h2>Daftar Hadir Kegiatan Siswa</h2>
 
-  <table id="daftarHadir">
-    <thead>
-      <tr>
-        <th>No</th>
-        <th>Nama Siswa</th>
-        <th>Hadir</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Ahmad</td>
-        <td class="checkbox">☐</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Budi</td>
-        <td class="checkbox">☐</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Citra</td>
-        <td class="checkbox">☐</td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>Dewi</td>
-        <td class="checkbox">☐</td>
-      </tr>
-    </tbody>
-  </table>
+<h2 style="text-align: center;">Daftar Hadir Kegiatan Siswa</h2>
 
-  <script>
-    $(document).ready(function() {
-      $('#daftarHadir tbody tr').click(function() {
-        let checkbox = $(this).find('.checkbox');
-        checkbox.text(checkbox.text() === '☐' ? '☑' : '☐');
-      });
+<table>
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Nama Siswa</th>
+      <th>Hadir</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>daplok</td>
+      <td class="status">❌</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>ukun</td>
+      <td class="status">❌</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>udin petot</td>
+      <td class="status">❌</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>asep</td>
+      <td class="status">❌</td>
+    </tr>
+  </tbody>
+</table>
+
+<div id="totalHadir">Jumlah Hadir: 0</div>
+
+<script>
+  function hitungJumlahHadir() {
+    let jumlah = $('.status').filter(function() {
+      return $(this).text() === '✅';
+    }).length;
+
+    $('#totalHadir').text('Jumlah Hadir: ' + jumlah);
+  }
+
+  $(document).ready(function() {
+    $('tbody tr').click(function() {
+      const statusCell = $(this).find('.status');
+
+      // Toggle ceklis
+      if (statusCell.text() === '✅') {
+        statusCell.text('❌');
+      } else {
+        statusCell.text('✅');
+      }
+
+      hitungJumlahHadir(); // update total
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
-
-</body>
